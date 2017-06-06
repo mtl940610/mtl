@@ -1,0 +1,349 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.maven</groupId>
+  <artifactId>test</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SMMaven</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  	<!-- jstl依赖 -->
+  	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	    <version>1.1.2</version>
+	</dependency>
+  	<!-- Kent Beck和Erich Gamma单元测试框架 -->
+    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>3.8.1</version>
+	    <scope>test</scope>
+    </dependency>
+    <!-- AOP联盟的API包，里面包含了针对面向切面的接口。通常Spring等其它具备动态织入功能的框架依赖此包。 -->
+    <dependency>
+	    <groupId>aopalliance</groupId>
+	    <artifactId>aopalliance</artifactId>
+	    <version>1.0</version>
+	</dependency>
+    <!--用于处理JavaBeans。它利用Java的反射机制，从动态的生成对bean的getter和setter的调用代码，到模拟创建一个动态的bean-->
+	<dependency>
+    	<groupId>commons-beanutils</groupId>
+    	<artifactId>commons-beanutils</artifactId>
+    	<version>1.7.0</version>
+	</dependency>
+	<!--用来处理常用的编码方法的工具类包，例如DES、SHA1、MD5、Base64，URL，Soundx等等-->
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.10</version>
+	</dependency> 
+	<!-- 包含了一些Apache开发的集合类，功能比Java.util.*强大 -->
+	<dependency>
+	    <groupId>commons-collections</groupId>
+	    <artifactId>commons-collections</artifactId>
+	    <version>3.2.2</version>
+	</dependency>
+	<!-- commons-logging能够选择使用Log4j还是JDK Logging，但不依赖于Log4j、JDK Logging的API。 -->
+    <dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!-- Apache文件上传组件 -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+	<!-- IO数据流读写功能。 -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
+	</dependency>
+	<!-- 包含了一些数据类型工具类，是java.lang.*的扩展 -->
+	<dependency>
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	    <version>2.6</version>
+	</dependency>
+	<!-- Java XML API -->
+	<dependency>
+	    <groupId>dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	<!-- java 操作json的所有jar -->
+	<dependency>
+	    <groupId>net.sf.ezmorph</groupId>
+	    <artifactId>ezmorph</artifactId>
+	    <version>1.0.6</version>
+	</dependency>
+	<!--  Apache Jakarta Common 下的子项目HTTP 协议的客户端编程工具包 -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.2</version>
+	</dependency>
+	<!-- httpcore是一套http协议实现包，httpclient是基于httpcore的一套客户端 -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpcore</artifactId>
+	    <version>4.4.5</version>
+	</dependency>
+
+	<!-- json格式解析-注解包（可选），提供注解功能。  -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.8.4</version>
+	</dependency>
+	<!-- json格式解析-核心包（必须），提供基于“流模式”解析的API -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.8.4</version>
+	</dependency>
+	<!-- json格式解析-数据绑定包（可选），提供基于“对象绑定”和“树模型”相关API。-->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.8.4</version>
+	</dependency>
+	<!-- 图表绘制类库。包含了以下功能:*文本工具类(textutilities), *用来显示关于应用程序信息 -->
+	<dependency>
+	    <groupId>jcommon</groupId>
+	    <artifactId>jcommon</artifactId>
+	    <version>0.9.5</version>
+	</dependency>
+	<!-- 图表绘制类库。 -->
+	<dependency>
+	    <groupId>jfree</groupId>
+	    <artifactId>jfreechart</artifactId>
+	    <version>1.0.13</version>
+	</dependency>
+	<!-- 提供将Java对象，包括beans, maps, collections, java arrays and XML等转换成JSON，或者反向转换的功能。 -->
+	<dependency>
+	    <groupId>net.sf.json-lib</groupId>
+	    <artifactId>json-lib</artifactId>
+	    <version>2.4</version>
+	    <classifier>jdk15</classifier>
+	</dependency>
+	<!-- Kaptcha是一个基于SimpleCaptcha的验证码组件  -->
+	<dependency>
+	    <groupId>com.github.penggle</groupId>
+	    <artifactId>kaptcha</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
+	<!-- Apache日志组件 -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	</dependency>
+	<!-- Sun发布的用来处理email的API -->
+	<dependency>
+	    <groupId>com.sun.mail</groupId>
+	    <artifactId>javax.mail</artifactId>
+	    <version>1.5.6</version>
+	</dependency>
+	<!-- MyBatis类库 -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.2.8</version>
+	</dependency>
+	<!-- 整合 MyBatis 和 Spring 框架的小类库 -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<!-- mysql驱动 -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.40</version>
+	</dependency>
+	<!-- 配置文件配置,在程序中直接调用,记录需要记录的日志 -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.21</version>
+	</dependency>
+	<!-- Apache POI是Apache软件基金会的开放源码函式库，POI提供API给Java程序对Microsoft Office格式档案读和写的功能 -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>3.15</version>
+	</dependency>
+	<!--用于操作.xlsx、.pptx、docx文件； -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>3.15</version>
+	</dependency>
+	<!--  用来支持office2007文件 -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml-schemas</artifactId>
+	    <version>3.15</version>
+	</dependency>
+	<!--  -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	</dependency>
+	<!-- 链接slf4j-api和log4j中间的适配器 -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>1.7.21</version>
+	</dependency>
+	<!-- 确保所有的spring模块都使用统一的版本,只有当外层的dependency元素中没有指明版本信息时，dependencyManagement中的dependencies元素才会起作用 -->
+    <dependency>  
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-framework-bom</artifactId>  
+        <version>4.3.3.RELEASE</version>  
+        <type>pom</type>  
+        <scope>import</scope>  
+    </dependency>  
+    <!-- 校验xml文件的格式  -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+    <!--  使用基于AOP的Spring特性，如声明型事务管理（Declarative Transaction Management）-->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 提供对AspectJ的支持，以便可以方便的将面向方面的功能集成进IDE中，比如Eclipse AJDT。外部依赖。 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!--  它包含访问配置文件、创建和管理bean以及进行（IoC/DI）操作相关的所有类。-->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 使用Spring ApplicationContext特性时所需的全部类，JDNI所需的全部类，UI方面的用来与模板（Templating）引擎如Velocity、FreeMarker、JasperReports集成的类，以及校验Validation方面的相关类。 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- Spring-context的扩展支持,用于MVC方面 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- Spring框架基本的核心工具类 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 表达式解析语言，支持在运行时动态的解析表达式给对象赋值 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 提供了在普通应用服务器中使用到的类设备支持和加载器实现 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-instrument</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 是 spring3.1对 Tomcat 的连接池的集成的包，包含了Spring的Tomcat设备代理 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-instrument-tomcat</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- Spring对JDBC数据访问进行封装的所有类 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 提供了在 Spring 中使用 JMS 的核心功能。它的模板类处理资源的创建和释放，简化了 JMS 的使用 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 集成messaging api和消息协议提供支持。-->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-messaging</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 包含Spring对DAO特性集进行了扩展，使其支持 iBATIS、JDO、OJB、TopLink，因为Hibernate已经独立成包了，现在不包含在这个包里了 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- O/X Mapper。O/X 映射器这个概念并不新鲜 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 自动载入Web Application Context 特性的类、Struts 与JSF 集成类、文件上传的支持类、Filter 类和大量工具辅助类。 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- Servlets，Web MVC框架，控制器和视图支持。当然，如果你的应用使用了独立的MVC 框架，则无需这个JAR 文件里的任何类。 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- 支持WebSocket方式的消息通信，以及如何利用STOMP协议作为应用层的协议——WebSocket的子协议 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-websocket</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	<!-- XML-Java绑定工具，利用它可以很方便地解析XML文档 -->
+	<dependency>
+	    <groupId>org.apache.xmlbeans</groupId>
+	    <artifactId>xmlbeans</artifactId>
+	    <version>2.6.0</version>
+	</dependency>
+	<!--  Xstream是一种OXMapping 技术，是用来处理XML文件序列化的框架,在将JavaBean序列化，或将XML文件反序列化的时候，不需要其它辅助类和映射文件，使得XML序列化不再繁索 -->
+	<dependency>
+	    <groupId>com.thoughtworks.xstream</groupId>
+	    <artifactId>xstream</artifactId>
+	    <version>1.3.1</version>
+	</dependency>
+	<!-- 二维码解析 -->
+	<dependency>
+	    <groupId>com.google.zxing</groupId>
+	    <artifactId>javase</artifactId>
+	    <version>3.3.0</version>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>test</finalName>
+  </build>
+</project>
